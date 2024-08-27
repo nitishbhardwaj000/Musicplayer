@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/7ecb381f06.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="player">
+            <nav>
+                <div class="circle" id="downloadbutton" onclick="downloadbutton()"><i class="fa-solid fa-download"></i></div>
+                <div class="circle"><i class="fas fa-bars"></i></div>
+            </nav>
+            <img src="../songimgs.png" class="songimage" alt="">
+            <audio id="audio" src="../musicfiles/Winning-Speech-Karan-Aujla.mp3"></audio>
+            <h1 id="songTitle">Song Title</h1>
+
+            <input type="range" id="progress">
+            <div class="controls">
+                <div class="control" onclick="prevsong()"><i class="fas fa-backward"></i></div>
+                <div class="control" onclick="playsong()"><i class="fas fa-play" id="ctrlicon"></i></div>
+                <div class="control" onclick="nextsong()"><i class="fas fa-forward"></i></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Add the modal code here -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <input type="text" id="downloadInput" placeholder="Enter song name">
+            <button onclick="downloadSong()">Download</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
